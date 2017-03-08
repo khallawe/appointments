@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--CSS from jqueryui for time and date display on all browsers -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-6">
+            <div>
+                <button class="btn btn-default btnNew" >NEW</button>
+                <button class="btn btn-default btnCancel" >
+                    CANCEL</button>
+                <form class="form" action="BLL/main.pl" method="post">
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>
+                            DATE:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="datepicker form-control" data-provide="datepicker" data-date-format="mm/dd/yyyy"
+                            placeholder="mm/dd/yyyy" required="required" name="txtdate" id="txtdate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>
+                            TIME:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" placeholder="HH:MM AM/PM" required="required" class="timepicker form-control"
+                            name="txttime" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4">
+                        <label>
+                            DESCRIPTION:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <textarea name="txtdescription" required="required" class="form-control" rows="4"></textarea>
+                    </div>
+                    <input type="hidden" name="save" value="1">
+                </div>
+                </form>
+                <div class="form-group">
+                    <div class="col-sm-10 searchPart">
+                        <input type="text" placeholder="Search" class="form-control" name="txtSearch" />
+                    </div>
+                    <div class="col-sm-2 searchPart">
+                        <button id="btnSearch" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="appt-list">
+                <table class="table table-bordered tblRes">
+                </table>
+            </div>
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
+            <!-- jquery ui -->
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="JS/Script.js"> </script>
+        </div>
+    </div>
+</body>
+</html>
